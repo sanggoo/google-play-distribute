@@ -78,7 +78,7 @@ def main(argv):
         print("Version code %d has been uploaded" % result["versionCode"])
 
         commit_request = (
-            service.edits().commit(editId=edit_id, packageName=package_name).execute()
+            service.edits().commit(editId=edit_id, packageName=package_name, changesNotSentForReview=True).execute()
         )
 
         print('Edit "%s" has been committed' % (commit_request["id"]))
